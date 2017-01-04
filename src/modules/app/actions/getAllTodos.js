@@ -7,7 +7,8 @@ function getAllTodos ({path, graphQL}) {
     const todos = {}
     const edges = result.viewer.allTodos.edges
     edges.forEach(edge => {
-      todos[edge.node.id] = edge.node
+      todos[edge.node.ref] = edge.node
+      todos[edge.node.ref].id = edge.node.id
     })
     return path.success({todos: todos})
   })

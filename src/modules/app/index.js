@@ -10,6 +10,7 @@ import toggleTodoCompleted from './chains/toggleTodoCompleted'
 import stopEditingTodo from './chains/stopEditingTodo'
 import clearCompletedTodos from './chains/clearCompletedTodos'
 import setFilter from './chains/setFilter'
+import mounted from './chains/mounted'
 
 export default {
   state: {
@@ -30,6 +31,7 @@ export default {
     toggleTodoCompletedChanged: toggleTodoCompleted,
     todoNewTitleAborted: stopEditingTodo,
     clearCompletedClicked: clearCompletedTodos,
-    filterClicked: setFilter
+    filterClicked: setFilter,
+    mounted:mounted
   }
 }

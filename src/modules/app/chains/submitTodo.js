@@ -1,4 +1,4 @@
-import {input, set, unset, state} from 'cerebral/operators'
+import {input, set, state} from 'cerebral/operators'
 
 import createTodo from '../actions/createTodo'
 import postTodo from '../actions/postTodo'
@@ -6,12 +6,13 @@ import getAllTodos from '../actions/getAllTodos'
 
 export default [
   createTodo,
+  set(state`app.todos.${input`ref`}`, input`todo.CreateTodoInput`),
+  set(state`app.newTodoTitle`, ''),
+  set(state`app.isSaving`, true),
   postTodo, {
     success: [
       getAllTodos,{
         success: [
-          set(state`app.newTodoTitle`, ''),
-          set(state`app.isSaving`, true),
           set(state`app.todos`,input`todos`)
         ],
         error: [
@@ -21,7 +22,6 @@ export default [
     ],
     error: [
       set(state`error`,input`error`),
-      unset(state`app.todos.${input`todo.id`}`)
     ]
   },
   set(state`app.isSaving`, false)

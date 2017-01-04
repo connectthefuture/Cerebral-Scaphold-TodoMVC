@@ -7,7 +7,7 @@ function clearCompleted ({state, path, graphQL}) {
       state.unset(`app.todos.${ref}`)
       const DeleteTodoInput = {
        "DeleteTodoInput": {
-         "id": ref,
+         "id": todos[ref].id,
        }
       }
       return new Promise((resolve, reject) => {

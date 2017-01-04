@@ -2,6 +2,7 @@ const DeleteTodoMutation = `mutation DeleteTodoMutation($DeleteTodoInput: Delete
   deleteTodo(input: $DeleteTodoInput){
     changedTodo {
       id
+      ref
     }
   }
 }`

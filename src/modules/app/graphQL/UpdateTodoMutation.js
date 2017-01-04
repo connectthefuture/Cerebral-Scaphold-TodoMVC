@@ -2,6 +2,7 @@ const UpdateTodoMutation = `mutation UpdateTodo($UpdateTodoInput: UpdateTodoInpu
   updateTodo(input: $UpdateTodoInput){
     changedTodo {
       id
+      ref
       createdAt
       completed
       title

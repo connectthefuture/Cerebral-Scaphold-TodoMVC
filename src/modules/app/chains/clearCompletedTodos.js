@@ -1,9 +1,10 @@
 import clearCompletedTodos from '../actions/clearCompletedTodos'
-import {set, state, input} from 'cerebral/operators'
+import {set, state, unset, input} from 'cerebral/operators'
 export default [
   set(state`isSaving`, true),
   clearCompletedTodos,{
     success: [
+      unset(state`app.todos.${input.ref}`),
       set(state`isSaving`, false)
     ],
     error: [

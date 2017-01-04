@@ -10,33 +10,39 @@ export default connect({
   todos: 'app.todos.**',
   isSaving: 'app.isSaving',
   visibleTodosRefs: visibleTodosRefs
+},{
+  mounted: 'app.mounted'
 },
-  function App (props) {
-    return (
-      <div id='todoapp-wrapper'>
-        <Recorder />
-        <section className='todoapp'>
-          <header className='header'>
-            <h1>todos</h1>
-            <NewTodoForm />
-          </header>
-
-          {props.visibleTodosRefs.length ? <TodosList /> : null}
-          {Object.keys(props.todos).length ? <TodosFooter /> : null}
-        </section>
-        <footer className='info'>
-          <p>
-            Double-click to edit a todo
-          </p>
-          <p>
-            Credits:
-            <a href='http://christianalfoni.com'>Christian Alfoni</a>,
-          </p>
-          <p>
-            Part of <a href='http://todomvc.com'>TodoMVC</a>
-          </p>
-        </footer>
-      </div>
-    )
+  class App extends React.Component {
+    componentDidMount(){
+      this.props.mounted()
+    }
+    render(){
+      return (
+        <div id='todoapp-wrapper'>
+          <Recorder />
+          <section className='todoapp'>
+            <header className='header'>
+              <h1>todos</h1>
+              <NewTodoForm />
+            </header>
+            {this.props.visibleTodosRefs.length ? <TodosList /> : null}
+            {Object.keys(this.props.todos).length ? <TodosFooter /> : null}
+          </section>
+          <footer className='info'>
+            <p>
+              Double-click to edit a todo
+            </p>
+            <p>
+              Credits:
+              <a href='https://cerebral.github.io/'>Cerebral</a>,
+            </p>
+            <p>
+              Part of <a href='http://todomvc.com'>TodoMVC</a>
+            </p>
+          </footer>
+        </div>
+      )
+    }
   }
 )

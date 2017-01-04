@@ -1,16 +1,13 @@
 import {DeleteTodoMutation} from '../graphQL'
 
-export default function toggleTodo({input, graphQL, path, state}){
-  
-  const id = input.ref
+export default function deleteTodo({input, graphQL, path, state}){
+  const todo = state.get(`app.todos.${input.ref}`)
 
   const DeleteTodoInput =  {
     "DeleteTodoInput": {
-      "id": id,
+      "id": todo.id,
     }
   }
-
-  state.unset(`app.todos.${input.ref}`)
 
   return graphQL.mutate(DeleteTodoMutation, DeleteTodoInput)
   .then( result => {

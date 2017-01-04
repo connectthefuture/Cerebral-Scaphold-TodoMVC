@@ -2,6 +2,7 @@ const CreateTodoMutation = `mutation CreateTodo($CreateTodoInput: CreateTodoInpu
   createTodo(input:$CreateTodoInput){
     changedTodo{
       id
+      ref
       title
       isSaving
       completed

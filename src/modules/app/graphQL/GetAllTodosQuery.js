@@ -4,6 +4,7 @@ const GetAllTodosQuery = `query {
       edges{
         node {
           id
+          ref
           title
           completed
           isSaving

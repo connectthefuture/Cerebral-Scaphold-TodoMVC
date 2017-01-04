@@ -2,15 +2,14 @@ import {UpdateTodoMutation} from '../graphQL'
 
 export default function updateTodoTitle({input, graphQL, path, state}){
 
-  const title = state.get(`app.todos.${input.ref}.title`)
-  const id = input.ref
+  const todo = state.get(`app.todos.${input.ref}`)
   const vars =  {
     "UpdateTodoInput": {
-      "id": id,
-      "title": title
+      "id": todo.id,
+      "title": todo.title
     }
   }
-  state.set(`app.todos.${input.ref}.title`, title)
+  state.set(`app.todos.${input.ref}.title`, todo.title)
   return graphQL.mutate(UpdateTodoMutation, vars)
   .then(result => {
     return path.success({result})
