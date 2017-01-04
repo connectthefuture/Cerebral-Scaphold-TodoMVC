@@ -22,24 +22,41 @@ export default connect({
         <div id='todoapp-wrapper'>
           <Recorder />
           <section className='todoapp'>
+            <div
+              style={{
+                paddingTop: 25,
+                marginTop: 25
+              }}>
+              <img
+                style={{
+                  width:'25%',
+                  marginLeft: "12.5%"
+                }} src={process.env.PUBLIC_URL + '/cerebral.png'} alt={'cerebral'}/>
+              <img
+                style={{
+                  width:'25%',
+                  marginLeft: "25%"
+                }} src={process.env.PUBLIC_URL + '/scaphold.webp'} alt={'scaphold'}/>
+            </div>
+            <h1>todos</h1>
+
             <header className='header'>
-              <h1>todos</h1>
               <NewTodoForm />
             </header>
             {this.props.visibleTodosRefs.length ? <TodosList /> : null}
             {Object.keys(this.props.todos).length ? <TodosFooter /> : null}
           </section>
           <footer className='info'>
-            <p>
+            <h3>
               Double-click to edit a todo
-            </p>
-            <p>
+            </h3>
+            <h3>
               Credits:
               <a href='https://cerebral.github.io/'>Cerebral</a>,
-            </p>
-            <p>
+            </h3>
+            <h3>
               Part of <a href='http://todomvc.com'>TodoMVC</a>
-            </p>
+            </h3>
           </footer>
         </div>
       )
