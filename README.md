@@ -4,7 +4,7 @@
 
 [Cerebral](https://github.com/cerebral/cerebral)
 
-[Scaphold]((https://scaphold.io))
+[Scaphold](https://scaphold.io)
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
