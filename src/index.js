@@ -16,7 +16,7 @@ import './styles.css'
 const controller = Controller({
 
   options: {strictRender: true},
-  devtools: process.env.NODE_ENV === 'production' ? null : Devtools({
+  devtools: Devtools({
     // storeMutations: false,
     bigComponentsWarning: {state: 50000000, signals: 50000000},
     // remoteDebugger: 'localhost:8787'
