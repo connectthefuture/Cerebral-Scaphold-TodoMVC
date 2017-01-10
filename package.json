@@ -48,8 +48,12 @@
   },
   "dependencies": {
     "cerebral": "2.0.0-0-alpha.6c3f1ec0",
+    "cerebral-module-useragent": "1.0.0-0-alpha.ff4ac2b1",
     "cerebral-router": "1.0.0-0-alpha.6c3f1ec0",
     "classnames": "^2.2.5",
+    "graphiql": "^0.8.1",
+    "graphql": "^0.8.2",
+    "isomorphic-fetch": "^2.2.1",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "todomvc-app-css": "^2.0.6",

@@ -1,5 +1,10 @@
 ### Cerebral GraphQL TodoMVC
+
 [Demo](http://cerebral-todomvc-graphql.surge.sh).
+
+[Cerebral](https://github.com/cerebral/cerebral)
+
+[Scaphold]((https://scapjold.io))
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 

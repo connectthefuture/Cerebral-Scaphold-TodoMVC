@@ -22,7 +22,7 @@ export default connect({
         <label htmlFor='toggle-all'>
           Mark all as complete
         </label>
-        <ul className='todo-list'>
+        <ul className='todo-list' style={{maxHeight: 250, overflowY:'scroll'}}>
           {todoRefs.map(ref => <Todo key={ref} todoRef={ref} />)}
         </ul>
       </section>

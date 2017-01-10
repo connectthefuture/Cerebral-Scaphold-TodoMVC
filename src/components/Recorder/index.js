@@ -10,45 +10,34 @@ export default connect({
   pauseClicked: 'recorder.pauseClicked'
 },
   function Recorder ({ recorder, recordClicked, playClicked, stopClicked, pauseClicked }) {
-    const style = {
-      height: '25px',
-      lineHeight: '19px',
-      border: '1px solid #333',
-      backgroundColor: 'rgba(175, 47, 47, 0.15)',
-      borderRadius: '3px',
-      color: '#333',
-      padding: '3px 10px',
-      boxSizing: 'border-box',
-      cursor: 'pointer'
-    }
 
     if (recorder.isRecording) {
       return (
-        <button style={style} onClick={() => stopClicked()}>
+        <button className="btn" onClick={() => stopClicked()}>
           Stop
         </button>
       )
     } else if (recorder.isPlaying) {
       return (
-        <button style={style} onClick={() => pauseClicked()}>
+        <button className="btn" onClick={() => pauseClicked()}>
           Pause
         </button>
       )
     } else if (recorder.isPaused) {
       return (
-        <button style={style} onClick={() => playClicked()}>
+        <button className="btn" onClick={() => playClicked()}>
           Resume
         </button>
       )
     } else if (recorder.hasRecording) {
       return (
-        <button style={style} onClick={() => playClicked()}>
+        <button className="btn" onClick={() => playClicked()}>
           Play
         </button>
       )
     } else {
       return (
-        <button style={style} onClick={() => recordClicked()}>
+        <button className="btn" onClick={() => recordClicked()}>
           Record
         </button>
       )
