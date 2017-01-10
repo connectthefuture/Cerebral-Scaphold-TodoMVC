@@ -1,0 +1,19 @@
+{
+  "name": "cerebral-provider-graphql",
+  "version": "1.0.0",
+  "description": "Cerebral GraphQL Provider",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wayne Frazer Bamford",
+  "main": "lib/index.js",
+  "keywords": [
+    "cerebral",
+    "GraphQL"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "uuid": "^3.0.1",
+    "whatwg-fetch": "^2.0.1"
+  }
+}
